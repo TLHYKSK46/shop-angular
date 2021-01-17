@@ -13,11 +13,10 @@ export class CategoryComponent implements OnInit {
 
   constructor(private categoryService: CategoryService) { }
   title = "Kategori Listesi"
+
   categories: Category[] = [];
-
-
-  ngOnInit(): void {
-    this.categoryService.getProducts().subscribe(data =>
+  ngOnInit(){
+    this.categoryService.getCategories().subscribe(data =>
       this.categories = data);
   }
 

@@ -6,10 +6,11 @@ import {tap,catchError} from 'rxjs/operators'
 @Injectable()
 export class CategoryService {
 
+
   constructor( private http: HttpClient) { }
   path="http://localhost:3000/categories";
 
-  getProducts():Observable<Category[]>{
+  getCategories():Observable<Category[]>{
    return this.http.get<Category[]>(this.path).pipe(
     tap(data=>console.log(JSON.stringify(data))),
     catchError(this.handleError)
